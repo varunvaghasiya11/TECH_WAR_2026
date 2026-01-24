@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EMI Calculator</title>
+  </head>
+  <style media="screen">
+    .mtb{
+      margin:10px 0px;
+    }
+    .emical{
+      height:500px;
+      width:500px;
+      border:1px solid black;
+    }
+    .d-flex{
+      display:flex
+    }
+    body{
+      margin:auto 700px;
+    }
+    .js-center{
+      justify-content:center;
+    }
+  </style>
+  <body>
+    <h1 class="d-flex js-center">EMI Calculator</h1>
+    <div class="emical d-flex js-center">
+      <form class="j-center" onsubmit="calEMI()">
+        <div class="mtb">
+          <label> loadamount</label>
+          <input type="number" name="loadamount">
+        </div>
+        <div class="mtb">
+          <label for="">rate of interest</label>
+          <input type="number" name="rateintrest">
+        </div>
+        <div class="mtb">
+          <label for="">loan tenure</label>
+          <input type="number" name="year">
+        </div>
+        <button type="submit" class="js-center d-flex" name="button>
+        submit
+      </button>
+
+      </form>
+    </div>
+    <div class="mtb cal">
+
+    </div>
+  </body>
+  <script>
+    let print = document.querySelector('.cal');
+    function calEMI(loadamount,rateintrest,year){
+        monthelyEMI = (loadamount.value * rateintrest.value)/100;
+        principalamount = loadamount;
+        year = year;
+        totalinterest = monthelyEMI * year;
+        totalamount = principalamount + monthelyEMI;
+    }
+    print.innerHTML = `<div>
+      <h1>monthelyEMI</h1>
+    </div>`
+
+  </script>
+</html>
